@@ -1,32 +1,34 @@
 html, body {
-    height: 100%;
+    /*height: 100%;*/
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    /*background-color: black;*/
 }
 
-#curtain-container{
+#countdown-background{
     width: 100vw;
     height: 100vh;
     max-width:100%;
-    background-color: black;
-}
-
-#curtain-container > img{
-    width: 50vw;
-    height: 100vh;
-    max-width:50%;
-    position: fixed;
-    top: 0px;
-}
-
-#countdown-container{
-    width: 100vw;
-    height: 100vh;
-    max-width:100%;
+    max-height:100%;
     background-color: black;
 
     /*background-image: url("../img/source.gif");*/
     /*background-size: cover;*/
     /*background-repeat: no-repeat;*/
     /*background-position: 50% 50%;*/
+}
+
+.goldtextcss {
+    color:	#AE8625; /*if no support for background-clip*/
+    background: -webkit-linear-gradient(transparent, transparent),
+    -webkit-linear-gradient(top,
+            rgba(174,134,37,1) 5%,
+            rgba(247,239,138,1) 36%,
+            rgba(210,172,71,1) 75%,
+            rgba(237,201,103,1) 92%
+    );
+    background: -o-linear-gradient(transparent, transparent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

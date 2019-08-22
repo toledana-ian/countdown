@@ -3,6 +3,8 @@
  */
 class ConfettiParticle {
 
+
+
     constructor( context, width, height ) {
         this.context = context;
         this.width = width;
@@ -21,8 +23,20 @@ class ConfettiParticle {
     }
 
     reset() {
+        let goldPalette = [
+            [45, 100, 33],
+            [45, 60, 47],
+            [45, 100, 50],
+            [45, 100, 63],
+            [45, 100, 73],
+        ];
+        let randColor = Math.floor(Math.random() * (goldPalette.length-1 - 0 + 1)) + 0
+        this.color = goldPalette[randColor];
+
+        //this.color = [Math.floor( Math.random() * 360 ), 50, 50];
+
         this.lightness = 50;
-        this.color = Math.floor( Math.random() * 360 );
+        //this.color = Math.floor( Math.random() * 360 );
         this.x = Math.random() * this.width;
         this.y = Math.random() * this.height - this.height;
         this.diameter = Math.random() * 6 + 4;
@@ -33,7 +47,7 @@ class ConfettiParticle {
 
     darken() {
         if ( this.y < 100 || this.lightness <= 0 ) return;
-        this.lightness -= ( 250 / this.height );
+        //this.lightness -= ( 250 / this.height );
     }
 
     update() {
@@ -51,89 +65,15 @@ class ConfettiParticle {
     }
 
     draw() {
+
+
         let x = this.x + this.tilt;
         this.context.beginPath();
         this.context.lineWidth = this.diameter;
-        this.context.strokeStyle = "hsl("+ this.color +", 50%, "+this.lightness+"%)";
+        //this.context.strokeStyle = "hsl("+ this.color +", 50%, "+this.lightness+"%)";
+        this.context.strokeStyle = "hsl("+ this.color[0] +", "+this.color[1]+"%, "+this.color[2]+"%)";
         this.context.moveTo( x + this.diameter / 2, this.y );
         this.context.lineTo( x, this.y + this.tilt + this.diameter / 2 );
         this.context.stroke();
     }
 }
-/**
- * Setup
- */
-
-$(function() {
-    let width = window.innerWidth;
-    let height = window.innerHeight;
-    let particles = [];
-
-    // particle canvas
-    // const canvas = document.createElement( 'canvas' );
-    // const context = canvas.getContext( '2d' );
-    // canvas.id = 'particle-canvas';
-    // canvas.width = width;
-    // canvas.height = height;
-    // document.body.appendChild( canvas );
-
-    const canvas = $('#countdown-container')[0];
-
-    console.log(canvas);
-
-    const context = canvas.getContext( '2d' );
-
-    // change body bg color
-    const changeBgColor = () => {
-        const hue = Math.floor( Math.random() * 360 );
-        document.body.style.backgroundColor = "hsl("+ hue +", 50%, 5%)";
-    };
-
-    // update canvas size
-    const updateSize = () => {
-        width = window.innerWidth;
-        height = window.innerHeight;
-        canvas.width = width;
-        canvas.height = height;
-    };
-
-    // create confetti particles
-    const createParticles = () => {
-        particles = [];
-        let total = 100;
-
-        if ( width > 1080 ) { total = 400; } else
-        if ( width > 760 )  { total = 300; } else
-        if ( width > 520 )  { total = 200; }
-
-        for ( let i = 0; i < total; ++i ) {
-            particles.push( new ConfettiParticle( context, width, height ) );
-        }
-    };
-
-    // animation loop function
-    const animationFunc = () => {
-        requestAnimationFrame( animationFunc );
-        if ( Math.random() > 0.98 ) changeBgColor();
-        context.clearRect( 0, 0, width, height );
-
-        for ( let p of particles ) {
-            p.width = width;
-            p.height = height;
-            p.update();
-            p.draw();
-        }
-    };
-
-    // on resize
-    window.addEventListener( 'resize', e => {
-        updateSize();
-        createParticles();
-    });
-
-    // start
-    updateSize();
-    createParticles();
-    changeBgColor();
-    animationFunc();
-});
