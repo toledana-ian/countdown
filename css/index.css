@@ -25,10 +25,19 @@ html, body {
     -webkit-linear-gradient(top,
             rgba(174,134,37,1) 5%,
             rgba(247,239,138,1) 36%,
-            rgba(210,172,71,1) 75%,
-            rgba(237,201,103,1) 92%
+            rgba(237,201,103,1) 75%,
+            rgba(210,172,71,1) 92%
     );
     background: -o-linear-gradient(transparent, transparent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
 }

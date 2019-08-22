@@ -13,22 +13,22 @@ Primary use:
 
 @font-face {
   font-family: Poppins-Regular;
-  src: url('../fonts/Poppins/Poppins-Regular.ttf'); 
+  src: url('../fonts/myriad-pro/MYRIADPRO-REGULAR.OTF');
 }
 
 @font-face {
   font-family: Poppins-Bold;
-  src: url('../fonts/Poppins/Poppins-Bold.ttf'); 
+  src: url('../fonts/myriad-pro/MYRIADPRO-BOLD.OTF');
 }
 
 @font-face {
   font-family: Poppins-Thin;
-  src: url('../fonts/Poppins/Poppins-Thin.ttf'); 
+  src: url('../fonts/myriad-pro/MyriadPro-Light.otf');
 }
 
 @font-face {
   font-family: Poppins-Black;
-  src: url('../fonts/Poppins/Poppins-Black.ttf');
+  src: url('../fonts/myriad-pro/MYRIADPRO-BOLDIT.OTF');
 }
 
 
@@ -108,8 +108,8 @@ Primary use:
 }
 
 .l1-txt2 {
-  font-family: Poppins-Black;
-  font-size: 120px;
+  font-family: Poppins-Regular;
+  font-size: 135px;
   line-height: 1;
   color: #fff;
   text-transform: uppercase;

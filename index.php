@@ -17,7 +17,7 @@
     <script src="js/particle.js"></script>
     <script src="js/index.js"></script>
 </head>
-<body style="position: relative;">
+<body style="position: relative; background-color: black">
 <div id="countdown-container" class="flex-col-c-m p-l-15 p-r-15 p-t-50 p-b-120" style="height: 100px;
   width: 100%;
   position: absolute;
@@ -31,7 +31,9 @@
 <!--        Coming Soon-->
 <!--    </h3>-->
 
-    <div class="flex-w flex-c-m cd100">
+
+
+    <div class="flex-w flex-c-m cd100" style="z-index: 1;">
         <div class="flex-col-c wsize1 m-b-30" style="width: 275px;">
             <span class="l1-txt2 p-b-9 days goldtextcss">000</span>
             <span class="s1-txt1 where1 p-l-35">Days</span>
@@ -52,8 +54,18 @@
             <span class="s1-txt1 where1 p-l-35">Seconds</span>
         </div>
     </div>
+
+    <video autoplay loop id="video-background" muted plays-inline style="background-color: black;">
+        <source src="img/goldenLight.mp4" type="video/mp4">
+    </video>
+
+    <audio id="myAudio">
+        <source src="img/Carmen%20Twillie,%20Lebo%20M.%20-%20Circle%20Of%20Life%20(Official%20Video%20from%20The%20Lion%20King).mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
 </div>
-<canvas id="countdown-background"></canvas>
+
+<!--<canvas id="countdown-background"></canvas>-->
 
 
 </body>

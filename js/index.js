@@ -28,8 +28,10 @@ $(function() {
     $('body').on('dblclick', function (){
         $('body').off();
 
+        document.getElementById("myAudio").play();
+
         $('#countdown-container').fadeIn(2000, function () {
-            let returnData = $('.cd100').countdown100({
+            $('.cd100').countdown100({
                 /*Set Endtime here*/
                 /*Endtime must be > current time*/
                 endtimeYear: endYear,
@@ -42,8 +44,6 @@ $(function() {
                 // ex:  timeZone: "America/New_York"
                 //go to " http://momentjs.com/timezone/ " to get timezone
             });
-
-            console.log(returnData);
         });
 
         const canvas = $('#countdown-background')[0];
