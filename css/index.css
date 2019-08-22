@@ -1,0 +1,32 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#curtain-container{
+    width: 100vw;
+    height: 100vh;
+    max-width:100%;
+    background-color: black;
+}
+
+#curtain-container > img{
+    width: 50vw;
+    height: 100vh;
+    max-width:50%;
+    position: fixed;
+    top: 0px;
+}
+
+#countdown-container{
+    width: 100vw;
+    height: 100vh;
+    max-width:100%;
+    background-color: black;
+
+    /*background-image: url("../img/source.gif");*/
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: 50% 50%;*/
+}
