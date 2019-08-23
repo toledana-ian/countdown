@@ -6,44 +6,27 @@ $(function() {
     let endMin = 0;
     let endSec = 0;
 
-    let start = moment(new Date($.now()));
-    let end = moment(new Date(endYear+"-"+endMonth+"-"+endDate+" "+endHour+":"+endMin+":"+endSec));
-
-    let duration = moment.duration(end.diff(start));
-
-    console.log(duration);
-
-    let diffInDays = end.diff(start, 'days');
-    let diffInHours = duration.hours();
-    let diffInMins = duration.minutes();
-    let diffInSecs = duration.seconds();
-
-    //if(diffInHours<10) diffInHours = '0'+diffInHours;
-
-    $('.days').text(diffInDays);
-    $('.hours').text(diffInHours<10 ? '0'+diffInHours : diffInHours);
-    $('.minutes').text(diffInMins<10 ? '0'+diffInMins : diffInMins);
-    $('.seconds').text(diffInSecs-2<10 ? '0'+diffInSecs-2 : diffInSecs-2);
-
     $('body').on('dblclick', function (){
         $('body').off();
 
         document.getElementById("myAudio").play();
 
+        $('.cd100').countdown100({
+            /*Set Endtime here*/
+            /*Endtime must be > current time*/
+            endtimeYear: endYear,
+            endtimeMonth: endMonth,
+            endtimeDate: endDate,
+            endtimeHours: endHour,
+            endtimeMinutes: endMin,
+            endtimeSeconds: endSec,
+            timeZone: ""
+            // ex:  timeZone: "America/New_York"
+            //go to " http://momentjs.com/timezone/ " to get timezone
+        });
+
         $('#countdown-container').fadeIn(2000, function () {
-            $('.cd100').countdown100({
-                /*Set Endtime here*/
-                /*Endtime must be > current time*/
-                endtimeYear: endYear,
-                endtimeMonth: endMonth,
-                endtimeDate: endDate,
-                endtimeHours: endHour,
-                endtimeMinutes: endMin,
-                endtimeSeconds: endSec,
-                timeZone: ""
-                // ex:  timeZone: "America/New_York"
-                //go to " http://momentjs.com/timezone/ " to get timezone
-            });
+
         });
 
         const canvas = $('#countdown-background')[0];
