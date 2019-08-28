@@ -23,17 +23,17 @@ class ConfettiParticle {
     }
 
     reset() {
-        let goldPalette = [
-            [45, 100, 33],
-            [45, 60, 47],
-            [45, 100, 50],
-            [45, 100, 63],
-            [45, 100, 73],
-        ];
-        let randColor = Math.floor(Math.random() * (goldPalette.length-1 - 0 + 1)) + 0
-        this.color = goldPalette[randColor];
+        // let goldPalette = [
+        //     [45, 100, 33],
+        //     [45, 60, 47],
+        //     [45, 100, 50],
+        //     [45, 100, 63],
+        //     [45, 100, 73],
+        // ];
+        // let randColor = Math.floor(Math.random() * (goldPalette.length-1 - 0 + 1)) + 0
+        // this.color = goldPalette[randColor];
 
-        //this.color = [Math.floor( Math.random() * 360 ), 50, 50];
+        this.color = [Math.floor( Math.random() * 360 ), 50, 50];
 
         this.lightness = 50;
         //this.color = Math.floor( Math.random() * 360 );

@@ -25,9 +25,11 @@ $(function() {
             //go to " http://momentjs.com/timezone/ " to get timezone
         });
 
-        $('#countdown-container').fadeIn(2000, function () {
+        $('#countdown-container').fadeIn(8000, function () {
 
         });
+
+        return;
 
         const canvas = $('#countdown-background')[0];
         const context = canvas.getContext( '2d' );

@@ -55,18 +55,17 @@
         </div>
     </div>
 
-    <video autoplay loop id="video-background" muted plays-inline style="background-color: black;">
+    <video autoplay loop id="video-background" muted style="background-color: black;">
         <source src="img/goldenLight.mp4" type="video/mp4">
     </video>
 
     <audio id="myAudio">
-        <source src="img/Carmen%20Twillie,%20Lebo%20M.%20-%20Circle%20Of%20Life%20(Official%20Video%20from%20The%20Lion%20King).mp3" type="audio/mp3">
+        <source src="img/levels.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 </div>
 
 <!--<canvas id="countdown-background"></canvas>-->
-
 
 </body>
 </html>
